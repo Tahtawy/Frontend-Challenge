@@ -1,7 +1,8 @@
 @import "../../node_modules/bootstrap/scss/navbar";
 
 .navigation-bar {
-    @extend .navbar, .navbar-expand-lg, .navbar-light, .bg-light ;
+    @extend .navbar, .navbar-expand-lg, .navbar-light ;
+    background-color: #e3f2fd;
 }
 
 .logo {
@@ -17,10 +18,18 @@
     @extend .navbar-toggler ;
 }
 
+.navbar-collapse {
+    @include media-breakpoint-up(lg) {
+        justify-content: flex-end;
+    }
+}
+
 .navigation-list {
     @extend .navbar-nav ;
     &__link {
         @extend .nav-link ;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
     }
     &--active {
         a{
