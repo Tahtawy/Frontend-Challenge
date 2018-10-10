@@ -1,0 +1,30 @@
+@import "../../node_modules/bootstrap/scss/navbar";
+
+.navigation-bar {
+    @extend .navbar, .navbar-expand-lg, .navbar-light, .bg-light ;
+}
+
+.logo {
+    @extend .navbar-brand;
+    &__image {
+        @extend .d-inline-block, .align-top ;
+        height: auto;
+        width: 40px;
+    }
+}
+
+.toggler {
+    @extend .navbar-toggler ;
+}
+
+.navigation-list {
+    @extend .navbar-nav ;
+    &__link {
+        @extend .nav-link ;
+    }
+    &--active {
+        a{
+            color: rgba(#000, 0.9)!important;
+        }
+    }
+}

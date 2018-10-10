@@ -5,8 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!-- Roboto Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i">
+    <!-- Page Style -->
+    <link rel="stylesheet" href="./css/pages/users.css">
+
 </head>
 <body>
-    
+
+    <!-- Start Navigation Bar -->
+    <nav class="navigation-bar">
+
+        <a href="#" class="logo">
+            <img src="./images/logo.png" alt="" class="logo__image">
+            <strong>Git</strong>Hub
+        </a>
+
+        <button class="toggler" type="button" data-toggle="collapse" data-target="#collapseArea" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="collapseArea" class="navbar-collapse collapse">
+            <ul class="navigation-list">
+                <li class="navigation-list__item navigation-list--active">
+                    <a href="" class="navigation-list__link">Home</a>
+                </li>
+                <li class="navigation-list__item">
+                    <a href="" class="navigation-list__link">Users</a>
+                </li>
+                <li class="navigation-list__item">
+                    <a href="" class="navigation-list__link">About</a>
+                </li>
+            </ul>
+        </div>
+        
+    </nav> 
+    <!-- End Navigation Bar -->
+
+    <!-- Scripts -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
