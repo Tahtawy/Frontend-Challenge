@@ -2,16 +2,18 @@
  * Bootstrap Framework
  */
 
-// Bootstrap
+/* Bootstrap */
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 /* Global */
 @import "./global-style/root";
 @import "./global-style/body";
 @import "./global-style/section";
+@import "./global-style/main";
 @import "./global-style/div";
 @import "./global-style/p";
 @import "./global-style/a";
+@import "./global-style/button";
 @import "./global-style/span";
 
 

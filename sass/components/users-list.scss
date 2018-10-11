@@ -1,0 +1,37 @@
+.sidebar {
+    @include make-col(2, 9);
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    background-color: $white;
+
+    &__title {
+        @extend .text-capitalize ;
+        border-bottom: 1px solid $gray-200;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    &__h3 {
+        font-weight: 100;
+        margin-bottom: 0;
+    }
+
+    &__users-list {
+        @include list-unstyled;
+        padding: 1rem;
+    }
+
+    &__user-item {
+        cursor: pointer;
+        margin-bottom: 1rem;
+    }
+
+    &__user-image {
+        @include border-radius(50%);
+        @include size(50px);
+        margin-right: 0.5rem;
+    }
+
+    &__user-name {
+        @extend .text-capitalize;
+    }
+}

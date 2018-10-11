@@ -2,20 +2,24 @@
 
 .navigation-bar {
     @extend .navbar, .navbar-expand-lg, .navbar-light ;
-    background-color: #e3f2fd;
-}
+    background-color: $blue;
+    position: fixed !important;
+    width: 100%;
 
-.logo {
-    @extend .navbar-brand;
+    &__logo {
+        @extend .navbar-brand;
+        color: rgba(#FFF, .9)!important;
+    }
+
     &__image {
         @extend .d-inline-block, .align-top ;
         height: auto;
         width: 40px;
     }
-}
 
-.toggler {
-    @extend .navbar-toggler ;
+    &__toggler {
+        @extend .navbar-toggler ;
+    }
 }
 
 .navbar-collapse {
@@ -26,14 +30,17 @@
 
 .navigation-list {
     @extend .navbar-nav ;
+
     &__link {
         @extend .nav-link ;
+        color: rgba(#FFF, .5) !important;
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
     }
+    
     &--active {
         a{
-            color: rgba(#000, 0.9)!important;
+            color: rgba(#FFF, 0.9)!important;
         }
     }
 }

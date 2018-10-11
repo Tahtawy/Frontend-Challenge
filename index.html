@@ -8,6 +8,8 @@
 
     <!-- Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+
     <!-- Page Style -->
     <link rel="stylesheet" href="./css/pages/users.css">
 
@@ -17,12 +19,12 @@
     <!-- Start Navigation Bar -->
     <nav class="navigation-bar">
 
-        <a href="#" class="logo">
-            <img src="./images/logo.png" alt="" class="logo__image">
+        <a href="#" class="navigation-bar__logo">
+            <img src="./images/logo.png" alt="logo-image" class="navigation-bar__image">
             <strong>Git</strong>Hub
         </a>
 
-        <button class="toggler" type="button" data-toggle="collapse" data-target="#collapseArea" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navigation-bar__toggler" type="button" data-toggle="collapse" data-target="#collapseArea" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -42,6 +44,31 @@
         
     </nav> 
     <!-- End Navigation Bar -->
+
+    <main class="main">
+
+        <!-- Start Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar__title">
+                <h3 class="sidebar__h3">users list</h3>
+            </div>
+
+            <ul class="sidebar__users-list">
+                <li class="sidebar__user-item">
+                    <img src="./images/avatar.png" alt="user-image" class="sidebar__user-image">
+                    <span class="sidebar__user-name">mohammed galal</span>
+                </li>
+                <li class="sidebar__user-item">
+                    <img src="./images/avatar.png" alt="user-image" class="sidebar__user-image">
+                    <span class="sidebar__user-name">mohammed galal</span>
+                </li>
+            </ul>
+
+        </aside>
+        <!-- End Sidebar -->
+
+    </main>
 
     <!-- Scripts -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
