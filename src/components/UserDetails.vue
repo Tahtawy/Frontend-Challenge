@@ -44,7 +44,11 @@ export default {
     },
     watch: {
         $route (to, from){
-            this.fetchUserData(this.$route.params.login);
+            let routeLoginParameter = this.$route.params.login;
+            if(routeLoginParameter)
+                this.fetchUserData(this.$route.params.login);
+            else 
+                this.fetchUserData('mojombo');
         }
     },
     methods: {
