@@ -6,5 +6,11 @@ export default {
             return response.data[0].login;
         });
         return firstUserId;
+    },
+    getSingleUser (userLogin) {
+        let user = axios.get('https://api.github.com/users/'+userLogin).then((response) => {
+            return response.data;
+        });
+        return user;
     }
 }

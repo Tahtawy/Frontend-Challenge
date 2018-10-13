@@ -1,27 +1,26 @@
 <template>
     <section class="user-details">
-
         <div class="user-details__title">
             <h3 class="user-details__h3">user's details</h3>
         </div>
 
-        <div class="loading-screen" v-show="isLoading">
+        <div class="loading-screen" v-show="loadingState">
             <div class="loading"></div>
         </div>
 
-        <div class="user-details__body" v-show="!isLoading">
-            <img :src="currentUser.avatar_url" alt="user-details-avatar" class="user-details__image">
+        <div class="user-details__body" v-show="!loadingState">
+            <img :src="userDetails.avatar_url" alt="user-details-avatar" class="user-details__image">
             <div class="name-and-id">
-                <p class="user-details__name">{{ currentUser.login }}</p>
-                <em class="user-details__id">@id:{{ currentUser.id }}</em>
+                <p class="user-details__name">{{ userDetails.login }}</p>
+                <em class="user-details__id">@id:{{ userDetails.id }}</em>
             </div>
             <div class="user-details__email">
                 <label class="user-details__label">email:</label>
-                <span class="user-details__value">mght29@gmail.com</span>
+                <span class="user-details__value">{{ (!userDetails.email) ? "private email" : userDetails.email }}</span>
             </div>
             <div class="user-details__created-at">
                 <label class="user-details__label">created at:</label>
-                <span class="user-details__value">{{ createdAt }}</span>
+                <span class="user-details__value">{{ userDetails.created_at }}</span>
             </div>
         </div>
 
@@ -32,38 +31,10 @@
 export default {
     data: function () {
         return {
-            currentUser: {},
-            createdAtDate: '',
             isLoading: false
         }
     },
-    computed: {
-        createdAt: function () {
-            return this.createdAtDate.substr(0, this.createdAtDate.indexOf('T'))
-        }
-    },
-    watch: {
-        $route (to, from){
-            let routeLoginParameter = this.$route.params.login;
-            if(routeLoginParameter)
-                this.fetchUserData(this.$route.params.login);
-            else 
-                this.fetchUserData('mojombo');
-        }
-    },
-    methods: {
-        fetchUserData(login) {
-            this.isLoading = true;
-            this.$http.get('https://api.github.com/users/'+login).then((response) => {
-                this.currentUser = response.data;
-                this.createdAtDate = response.data.created_at;
-                this.isLoading = false;
-            })
-        }
-    },
-    mounted: function () {
-        this.fetchUserData('mojombo');
-    }
+    props: ['loadingState', 'userDetails']
 }
 </script>
 

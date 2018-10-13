@@ -43,8 +43,8 @@ export default {
             this.fetchUserChucnk(this.startId);
         },
         updateUserDetails: function (login) {
+            this.selectedId = login;
             this.$router.push({ name: 'userDetails', params: {login:login} });
-            this.selectedId = this.$route.params.login;
         },
         fetchUserChucnk: function (startId) {
             this.isLoading = true;
