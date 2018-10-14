@@ -71,9 +71,9 @@ export default {
         align-items: center;
         background-color: white;
         display: flex;
-        height: 70%;
         justify-content: center;
         left: 0;
+        padding: 3rem 0;
         position: absolute;
         top: 66px;
         width: 100%;

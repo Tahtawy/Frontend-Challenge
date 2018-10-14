@@ -1,5 +1,5 @@
 <template>
-    <main class="main">
+    <main class="user-main">
         <user-list></user-list>
         <user-details :loadingState="isUserLoading" :userDetails="currentUserObject"></user-details>
     </main>
@@ -73,3 +73,13 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+    .user-main {
+        @include make-row;
+        background-color: #EDF2F5;
+        height: 100vh;
+        max-height: 100vh;
+        padding: 5rem 2rem 1rem;
+    }
+</style>

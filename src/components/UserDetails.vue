@@ -44,7 +44,7 @@ export default {
         align-items: center;
         background-color: white;
         display: flex;
-        height: 100%;
+        height: 60%;
         justify-content: center;
         left: 0;
         position: absolute;
