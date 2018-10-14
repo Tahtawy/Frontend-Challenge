@@ -4,7 +4,7 @@
 
         <a href="#" class="navigation-bar__logo">
             <img src="../../assets/images/logo.png" alt="logo-image" class="navigation-bar__image">
-            <strong>Git</strong>Hub
+            <strong>Git</strong>Hub Users
         </a>
 
         <button class="navigation-bar__toggler" type="button" data-toggle="collapse" data-target="#collapseArea" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,37 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Users from './views/Users.vue'
+import HomeRoutes from "./router/home";
+import UserRoutes from "./router/users";
+import AboutRoutes from "./router/about";
 
 Vue.use(Router)
 
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  linkExactActiveClass: 'navigation-list--active',
-  routes: [
+const defaultRoute = [
     {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-        path: '/users',
-        name: 'users',
-        component: Users
-    },
-    {
-        path: '/users/:login',
-        name: 'userDetails',
-        component: Users
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+        path: '*',
+        redirect: { name: 'home' }
     }
-  ]
-})
+];
+
+const routes = defaultRoute.concat(
+    HomeRoutes,
+    UserRoutes,
+    AboutRoutes
+);
+
+const router = new Router({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    linkExactActiveClass: 'navigation-list--active',
+    routes
+});
+
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title || 'Github Users'
+    next()
+});
+
+export default router
