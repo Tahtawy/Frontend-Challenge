@@ -8,7 +8,7 @@
 <script>
 
 import UserList from "../components/UserList";
-import UserDetails from "../components/UserDetails";
+import UserDetails from "../components/UserDetails/UserDetails";
 
 export default {
     data: function () {
